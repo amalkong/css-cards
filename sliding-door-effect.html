@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- <base href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/"> -->
+		<meta charset="UTF-8" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="MobileOptimized" content="320" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sliding Door Effect</title>
+		<meta name="author" content="Amalkong" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<style type="text/css">
+			* {box-sizing: border-box;}
+			body {
+				margin: 0;
+				background: #222;
+				display: flex;
+				min-height: 100vh;
+				align-items: center;
+				justify-content: center;
+				flex-wrap:wrap;
+			}
+			.sliding-door {
+				width: 50%;
+				flex: 50% 0 0;
+			}
+			figure {
+				position: relative;
+				max-width: 60vw;
+				width: 100%;
+				height: 60vh;
+				margin: 0 auto;
+				overflow: hidden;
+				/* background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/mad-dog.jpg); */
+				
+				background-size: cover;
+			}
+			
+			.sliding-door-1 figure{background-image: url(http://localhost/www/_assets/img/1567442235997.jpg);}
+			.sliding-door-2 figure{background-image: url(http://localhost/www/_assets/img/gallery/th.jpeg);}
+			.sliding-door-3 figure{background-image: url(http://localhost/www/_assets/img/gallery/jada-kingdom-001.jpg);}
+			.sliding-door-4 figure{background-image: url(http://localhost/www/_assets/img/gallery/IMG-20191111-WA0004.jpg);}
+			
+			figure img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: inherit;
+				/* transition: 1s ease-in-out; */
+				transition: 2s cubic-bezier(.94,0,0,1);
+			}
+			
+			figure img:hover{transition:2s ease-in-out;}
+			
+			figure img:first-of-type {
+				clip-path: url(#tophalf);
+				clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+			}
+
+			figure img:last-of-type {
+				clip-path: url(#bottomhalf);
+				clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+			}
+			figure:hover img:first-of-type {transform: translateY(-45%);opacity:0.3;}
+
+			figure:hover img:last-of-type {transform: translateY(45%);opacity:0.3;}
+
+			figcaption {
+				font-family: Montserrat, sans-serif;
+				padding-top: 12vw;
+				top: 0;
+				font-size: 10vw;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				color: white;
+				text-align: center;
+			}
+			.svghalves {width: 0;height: 0;}
+			@media all and (max-width: 500px) {
+				figure { 
+					max-width: 90vw;
+					width: 100%;
+					height: 90vh;
+				}
+				figcaption {font-size: 20vw;}
+				.sliding-door {
+					width: 100%;
+					flex: 100% 0 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="sliding-door sliding-door-1">
+			<figure>
+			  <figcaption>Born To Run</figcaption>
+			  <img src="http://localhost/www/_assets/img/1567442183620.jpg" alt="">
+			  <img src="http://localhost/www/_assets/img/1567442183620.jpg" alt="">
+			</figure>
+
+			<svg class="svghalves">
+				<defs>
+					<clipPath id="tophalf" clipPathUnits="objectBoundingBox">
+						<polygon points="0 0,1 0,1 .5,0 .5" />
+					</clipPath>
+					<clipPath id="bottomhalf" clipPathUnits="objectBoundingBox">
+						<polygon points="0 .5,1 .5,1 1,0 1" />
+					</clipPath>
+				</defs>
+			</svg>
+		</div>
+		<div class="sliding-door sliding-door-2">
+			<figure>
+			  <figcaption>Born To Run</figcaption>
+			  <img src="http://localhost/www/_assets/img/gallery/3.jpg" alt="">
+			  <img src="http://localhost/www/_assets/img/gallery/3.jpg" alt="">
+			</figure>
+			
+			<svg class="svghalves">
+				<defs>
+					<clipPath id="tophalf" clipPathUnits="objectBoundingBox">
+						<polygon points="0 0,1 0,1 .5,0 .5" />
+					</clipPath>
+					<clipPath id="bottomhalf" clipPathUnits="objectBoundingBox">
+						<polygon points="0 .5,1 .5,1 1,0 1" />
+					</clipPath>
+				</defs>
+			</svg>
+		</div>
+		<div class="sliding-door sliding-door-3">
+			<figure>
+			  <figcaption>Born To Run</figcaption>
+			  <img src="http://localhost/www/_assets/img/gallery/jada-kingdom-005.jpg" alt="">
+			  <img src="http://localhost/www/_assets/img/gallery/jada-kingdom-005.jpg" alt="">
+			</figure>
+
+			<svg class="svghalves">
+				<defs>
+					<clipPath id="tophalf" clipPathUnits="objectBoundingBox">
+						<polygon points="0 0,1 0,1 .5,0 .5" />
+					</clipPath>
+					<clipPath id="bottomhalf" clipPathUnits="objectBoundingBox">
+						<polygon points="0 .5,1 .5,1 1,0 1" />
+					</clipPath>
+				</defs>
+			</svg>
+		</div>
+		<div class="sliding-door sliding-door-4">
+			<figure>
+			  <figcaption>Born To Run</figcaption>
+			  <img src="http://localhost/www/_assets/img/gallery/ishawna-43915479_1764638510324670_4439397450439263214_n.jpg" alt="">
+			  <img src="http://localhost/www/_assets/img/gallery/ishawna-43915479_1764638510324670_4439397450439263214_n.jpg" alt="">
+			</figure>
+
+			<svg class="svghalves">
+				<defs>
+					<clipPath id="tophalf" clipPathUnits="objectBoundingBox">
+						<polygon points="0 0,1 0,1 .5,0 .5" />
+					</clipPath>
+					<clipPath id="bottomhalf" clipPathUnits="objectBoundingBox">
+						<polygon points="0 .5,1 .5,1 1,0 1" />
+					</clipPath>
+				</defs>
+			</svg>
+		</div>
+	</body>
+</html>
